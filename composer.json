@@ -1,0 +1,15 @@
+{
+    "name": "edd/icons",
+    "authors": [
+        {
+            "name": "Agri Edd. Oematan",
+            "email": "dnr739528@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            
+        }
+    }
+}
