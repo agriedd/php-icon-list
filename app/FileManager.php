@@ -15,8 +15,18 @@
                         "file"  => $read,
                     );
                 }
-                header("Content-Type: application/json");
-                echo json_encode($data);
+                return $data;
             }
+            return null;
+        }
+        public static function storeFile($file, $path = "./", $name = "file.txt"){
+            if(!file_exists($path) || !is_dir($path))
+                mkdir($path, 0755, true);
+            file_put_contents("{$path}/{$name}", $file);
+        }
+        public static function restoreFile($path = "./file.txt"){
+            if(file_exists($path) && is_file($path))
+                return file_get_contents($path);
+            return null;
         }
     }
