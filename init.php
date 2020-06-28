@@ -6,6 +6,7 @@ use App\Response;
 if(isset($_GET['reload'])){
     $data = FileManager::readFiles('./node_modules/bootstrap-icons/icons');
     FileManager::storeFile(json_encode($data), './storage/', 'icon.json');
+    Response::json([ "status" => "OK" ]);
 }
 if(isset($_GET['get'])){
     $data = FileManager::restoreFile('./storage/icon.json');

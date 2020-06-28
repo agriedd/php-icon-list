@@ -8,11 +8,14 @@
                 $data = array();
                 foreach($files as $index => $file){
                     $read = file_get_contents("{$path}/{$file}");
-                    $data[$index] = array(
+                    $tags = preg_replace("/(\.(.*))$/im", "", $file);
+                    $tags = explode("-", $tags);
+                    $data[] = array(
                         "id"    => $index,
                         "name"  => $file,
                         "src"   => "{$path}/{$file}",
                         "file"  => $read,
+                        "tag"   => $tags,
                     );
                 }
                 return $data;
