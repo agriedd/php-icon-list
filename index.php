@@ -99,10 +99,11 @@
                 data: [],
                 search: "",
                 status: false,
+                limit: 20,
             },
             computed: {
                 icons: function(){
-                    return this.data.filter(e => e.name.search(this.search) != -1 )
+                    return this.data.filter(e => e.name.search(this.search) != -1 ).splice(0, this.limit);
                 },
             },
             methods: {
